@@ -1,0 +1,15 @@
+.product-card {
+    width: 260px;
+    height: 260px;
+    margin: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .product-card:hover {
+  background-color: azure;
+  }
+  .product-card img {
+      width: 180px;
+      height: 180px;
+  }
