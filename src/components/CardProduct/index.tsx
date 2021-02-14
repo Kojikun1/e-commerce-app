@@ -1,12 +1,16 @@
 import React from 'react';
-import { Product } from '../../types/interfaces';
+import { JSONProduct } from '../../types/interfaces';
 import './styles.css';
 
+import { useCart } from '../../context/CartContext';
+
 interface Props {
-    item: Product;
+    item: JSONProduct;
 }
 
+
 const CardProduct: React.FC<Props>  = ({ item }) => {
+  const {  } = useCart();
       return (
         <div className="product-card">
         <img src={`${process.env.PUBLIC_URL}/assets/${item.image}`}  />

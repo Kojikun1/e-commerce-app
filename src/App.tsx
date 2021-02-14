@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
 
-import jsonData from './services/products.json';
-import { Product } from './types/interfaces';
-import CardProduct from './components/CardProduct';
+import Header from './components/Header';
+import CartProvider from './context/CartContext';
+import Home from './pages/Home';
 
-function App() {
-  const [data,setData] = useState<Product[]>([]);
-  useEffect(() => {
-        setData(jsonData);
-  },[])
-  return (
-    <div className="App">
-        <div className='products-container'>
-           {data.map(item => {
-             return (
-              <CardProduct item={item} />
-             )
-           })}  
+function App(){
+    return (
+      <CartProvider>
+           <Header />
+        <div className="App">
+              <Home />
         </div>
-    </div>
-  );
+      </CartProvider>
+    )
 }
 
 export default App;
