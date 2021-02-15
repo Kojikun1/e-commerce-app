@@ -63,3 +63,16 @@
       margin-left: 50px;
    }
  }
+
+ @media only screen and (max-width: 400px) {
+   .sub-order-container {
+      margin-left: 10px;
+   }
+   .search-container button {
+      width: 120px;
+   }
+   .search-container input {
+      width: 240px;
+      margin-left: 0;
+   }
+ }

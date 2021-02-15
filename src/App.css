@@ -2,8 +2,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow: auto;
 }
 .App {
   margin: 0 auto;
 }
-
+html, body, #root {
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+}
