@@ -11,7 +11,6 @@ function App(){
       <CartProvider>
            <Header />
         <div className="App">
-              <SearchBar />
               <Home />
         </div>
       </CartProvider>

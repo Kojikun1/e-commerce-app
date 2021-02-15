@@ -2,7 +2,13 @@ import React from 'react';
 
 import './styles.css';
 
-export default function SearchBar(){
+interface Props{
+    filterByName(): void;
+    filterByPrice(): void;
+    filterByScore(): void;
+}
+
+const SearchBar: React.FC<Props> = ({ filterByName, filterByPrice, filterByScore }) => {
     return (
     <>
         <div className='search-container'>
@@ -12,11 +18,13 @@ export default function SearchBar(){
         <div className='order-container'>
             <div className="sub-order-container">
                 <label>Ordenar Por:</label>
-                <p><a href="">Preço</a></p>
-                <p><a href="">Popularidade</a></p>
-                <p><a href="">Alfabetica</a></p>
+                <p><a href="" onClick={(e) => { e.preventDefault(); filterByPrice(); } }>Preço</a></p>
+                <p><a href="" onClick={(e) => { e.preventDefault(); filterByScore(); } }>Popularidade</a></p>
+                <p><a href="" onClick={(e) => { e.preventDefault(); filterByName(); } }>Alfabetica</a></p>
             </div>
         </div>
         </>
     )
 }
+
+export default SearchBar;
