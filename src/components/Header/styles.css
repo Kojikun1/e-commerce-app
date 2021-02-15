@@ -3,18 +3,29 @@ header {
     height: 50px;
     background-color: blue;
     display: flex;
-    flex-direction: row-reverse;
-    overflow: auto;
+    flex-direction: row;
 }
 img {
     width: 100px;
     height: 100px;
 }
-
+ul {
+    margin-left: 280px;
+    overflow: hidden;
+}
 ul li {
-    display: inline;
+    display: inline-block;
+    margin-left: 100px;
 }
 ul li a {
     color: #fff;
-    margin-right: 100px;
+    text-decoration: none;
+    line-height: 50px;
+    font-size: 22px;
+}
+
+@media only screen and (max-width: 600px) {
+    .header-ul {
+        margin-left: 0;
+    }
 }

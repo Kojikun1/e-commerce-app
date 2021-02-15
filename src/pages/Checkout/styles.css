@@ -10,11 +10,12 @@
     margin-top: 100px;
     margin-left: 100px;
 }
-.products-container-checkout li {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
+.products-container-checkout td{
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px;
 }
+
 .products-container-checkout button {
   width: 40px;
   height: 40px;
@@ -22,13 +23,6 @@
   border: none;
   margin-left: 10px;
   font-size: 18px;
-  border-radius: 5px;
-}
-.products-container-checkout li p{
-  border: 1px solid black;
-  width: 400px;
-  height: 40px;
-  margin-top: 20px;
   border-radius: 5px;
 }
 
