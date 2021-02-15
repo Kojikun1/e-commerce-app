@@ -5,6 +5,7 @@
     border: 1px solid gray;
     border-radius: 5px;
     text-align: center;
+    position: relative;
   }
   .product-card:hover {
   background-color: azure;
@@ -12,4 +13,34 @@
   .product-card img {
       width: 180px;
       height: 180px;
+  }
+  #cart-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px 0 0 0 ;
+    background-color: gray;
+  }
+  #cart-icon:hover {
+     background-color: lightgray;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .product-card{
+      width: 180px;
+      height: 180px;
+    }
+    #cart-icon {
+      width: 28px;
+      height: 28px;
+    }
+    .product-card img {
+      width: 120px;
+      height: 120px;
+  }
+  .product-card p {
+    font-size: 12px;
+  }
   }
