@@ -17,6 +17,9 @@ function App(){
         <Route exact path="/e-commerce-app">
               <Redirect to="/home" />
          </Route>
+         <Route exact path="/e-commerce-app/">
+              <Redirect to="/home" />
+         </Route>
           <Route exact path="/home"> 
                <Home />
           </Route>

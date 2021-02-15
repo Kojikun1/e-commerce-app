@@ -18,7 +18,7 @@ export default function Home(){
                return 0;
              }
         });
-        console.log(result);
+        //console.log(result);
         setData(prev => {
           return [...result];
         });
@@ -27,7 +27,7 @@ export default function Home(){
       const result = data.sort((a,b) => {
           return a.price > b.price ? 1 : a.price < b.price ? -1 : 0;
       });
-      console.log(result);
+      //console.log(result);
       setData(prev => {
         return [...result];
       });

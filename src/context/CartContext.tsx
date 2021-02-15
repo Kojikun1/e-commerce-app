@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext, useEffect, Children } from 'react';
+import React, { useState, useContext, createContext, useEffect } from 'react';
 import { Product } from '../types/interfaces';
 interface CartProducts{
     addToCart(data: Product): void;
@@ -6,13 +6,25 @@ interface CartProducts{
     removeById(id: number): void;
     getTotalProducts(): number;
     getTotalAmount(): string;
+    loadCartItems(): Product[];
 }
 
 const CartContext = createContext<CartProducts>({} as CartProducts);
 
+
 const CartProvider: React.FC = ({ children }) => {
     const [cartData,setCartData] = useState<Product[]>([]);
+    
+    useEffect(() => {
+        const data = localStorage.getItem('cartData')
 
+        if(data){
+            setCartData(JSON.parse(data));
+        }
+    },[]);
+    useEffect(() => {
+        localStorage.setItem('cartData',JSON.stringify(cartData));
+    },[cartData]);
     function addToCart(data: Product){
           
         console.log('is running');
@@ -61,9 +73,12 @@ const CartProvider: React.FC = ({ children }) => {
       });
       setCartData(result);
   }
+  function loadCartItems(){
+      return [...cartData];
+  }
 
         return (
-            <CartContext.Provider value={{addToCart, removeItem, removeById, getTotalAmount, getTotalProducts}} >
+            <CartContext.Provider value={{addToCart, removeItem, removeById, getTotalAmount, getTotalProducts, loadCartItems}} >
                 {children}
             </CartContext.Provider>
         )
