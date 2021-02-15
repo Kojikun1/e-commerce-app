@@ -42,12 +42,23 @@ export default function Home(){
     });
 }
 
+function searchByName(e: string){
+    const result = data.filter(item => item.name.toLowerCase().includes(e.toLowerCase()));
+    console.log(result);
+    setData(result);
+}
+
     useEffect(() => {
         setData(jsonData);
   },[]);
     return (
       <>
-        <SearchBar filterByName={filterByName} filterByPrice={filterByPrice}  filterByScore={filterByScore}/>
+        <SearchBar 
+               filterByName={filterByName}
+               filterByPrice={filterByPrice}  
+               filterByScore={filterByScore}
+               searchByName={searchByName}
+        />
         <div className='products-container'>
            {data.map(item => {
              return (
