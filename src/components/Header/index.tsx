@@ -10,7 +10,7 @@ export default function Header() {
         <header>
             <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/Home">Home</Link>
             </li>
             <li>
               <Link to="/checkout">Cart</Link>

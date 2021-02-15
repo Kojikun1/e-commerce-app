@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Switch, BrowserRouter as Router} from "react-router-dom";
+import {Route, Switch, BrowserRouter as Router, Redirect} from "react-router-dom";
 import './App.css';
 
 import Header from './components/Header';
@@ -14,10 +14,13 @@ function App(){
            <Header />
         <div className="App">
         <Switch>
-          <Route path="/" exact> 
+        <Route exact path="/e-commerce-app">
+              <Redirect to="/home" />
+         </Route>
+          <Route exact path="/home"> 
                <Home />
           </Route>
-          <Route path="/checkout">
+          <Route  exact path="/checkout">
               <Checkout />
           </Route>
         </Switch>

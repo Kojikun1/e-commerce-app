@@ -4,6 +4,7 @@ header {
     background-color: blue;
     display: flex;
     flex-direction: row-reverse;
+    overflow: auto;
 }
 img {
     width: 100px;
