@@ -5,11 +5,14 @@ import { useCart } from '../../context/CartContext';
 import './styles.css';
 
 export default function Checkout(){
-    const { loadCartItems, getTotalAmount, removeItem, removeById} = useCart();
+    const { loadCartItems, getTotalAmount, removeItem, removeById, getTotalProducts} = useCart();
     const data = loadCartItems();
     return (
+        <>
+        <h2>Produtos no Carrinho</h2>
         <div className="checkout-container">
-            <h2>Produtos no Carrinho</h2>
+            {data.length == 0 ? <p id="empty-cart-message">Carrinho Vazinho</p> :
+            <>
             <table className="products-container-checkout">
                 <tr>
                     <th>Produto</th>
@@ -20,19 +23,17 @@ export default function Checkout(){
                 </tr>
             {data.map(item => {
               return (
-                  <tr>
+                  <tr key={item.id}>
                   <td>
                      <p>Produto {item.name}</p>
                   </td>
                   <td>
-                     <p>R${item.price}</p>
+                     <p>R${item.price.toFixed(2)}</p>
                   </td>
-                  <td>
-                     <p>{item.amount}</p>
+                  <td className="amount-td">
+                     {item.amount}
                   </td>
-                  <td>
-                     <p>{item.amount * item.price}</p>
-                  </td>
+                   <td>{(item.amount * item.price).toFixed(2)}</td>
                   <td>
                       <button onClick={ () => removeItem(item.id)} >-</button>
                       <button onClick={ () => removeById(item.id)} >X</button>
@@ -41,7 +42,15 @@ export default function Checkout(){
               )
             })}
             </table>
-            <p id="total-output" >TOTAL: R${getTotalAmount()}</p>
+             <div id="total-output">
+                <p>Produtos:  R${getTotalAmount()}</p>
+                <p>Frete:  R${getTotalProducts() * 10}</p>
+                <p>Total + Frete:  R${Number(getTotalAmount()) + (getTotalProducts() * 10)}</p>
+                <button className="finalize-button">Finalizar Compra</button>
+             </div>
+            </>
+          }
         </div>
+        </>
     )
 }

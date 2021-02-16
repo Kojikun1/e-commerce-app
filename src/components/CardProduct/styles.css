@@ -6,6 +6,7 @@
     border-radius: 5px;
     text-align: center;
     position: relative;
+    background-color: white;
   }
   .product-card:hover {
   background-color: azure;

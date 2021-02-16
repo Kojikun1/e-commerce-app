@@ -1,0 +1,56 @@
+.modal-container{
+    width: 280px;
+    height: 80px;
+    position: absolute;
+    top: 20%;
+    left: calc(60% - 280px);
+    background-color: #bae7ff;
+    visibility: hidden;
+    z-index: 100;
+    border-radius: 10px;
+    padding: 10px;
+}
+#modal-text {
+    font-size: 18px;
+    text-align: center;
+}
+
+.run-animate {
+    animation: mymodal 1.2s linear;
+}
+
+@keyframes mymodal {
+    0% { 
+        top: 10%;
+        visibility: visible;
+        opacity: 0.5;
+    }
+    25% { 
+        top: 20%;
+        opacity: 0.8;
+    }
+    50% {
+        top: 30%;
+        opacity: 1.0;
+      }
+    75% {
+        top: 20%;
+        opacity: 0.8;
+    }
+    100% {
+        top: 10%;
+        opacity: 0.5;
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .modal-container{
+        width: 240px;
+        height: 40px;
+        left: calc(80% - 280px);
+    }
+    #modal-text {
+        font-size: 14px;
+    }
+  }

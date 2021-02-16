@@ -7,10 +7,11 @@ import CartIcon from '../../assets/cart-icon.svg';
 
 interface Props {
     item: JSONProduct;
+    onClick(): void;
 }
 
 
-const CardProduct: React.FC<Props>  = ({ item }) => {
+const CardProduct: React.FC<Props>  = ({ item, onClick }) => {
   const { addToCart, getTotalAmount } = useCart();
   console.log(getTotalAmount());
       return (
@@ -18,7 +19,14 @@ const CardProduct: React.FC<Props>  = ({ item }) => {
         <img src={`${process.env.PUBLIC_URL}/assets/${item.image}`}  />
         <p>Title: {item.name}</p>
         <p>Price ${item.price}</p>
-        <img src={CartIcon} alt="" id="cart-icon" onClick={(e) => addToCart({...item,amount: 1}) }/>
+        <img 
+           src={CartIcon} 
+            alt="cart-icon" 
+            id="cart-icon" 
+            onClick={(e) => {
+                onClick();
+               addToCart({...item,amount: 1})
+            } }/>
         </div>
       )
 }
