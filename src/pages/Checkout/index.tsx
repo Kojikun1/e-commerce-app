@@ -14,13 +14,16 @@ export default function Checkout(){
             {data.length == 0 ? <p id="empty-cart-message">Carrinho Vazinho</p> :
             <>
             <table className="products-container-checkout">
+                <thead>
                 <tr>
                     <th>Produto</th>
                     <th>Valor</th>
-                    <th>Quantidade</th>
+                    <th>Quant.</th>
                     <th>Total</th>
                     <th>Ações</th>
                 </tr>
+                </thead>
+                <tbody>
             {data.map(item => {
               return (
                   <tr key={item.id}>
@@ -33,7 +36,7 @@ export default function Checkout(){
                   <td className="amount-td">
                      {item.amount}
                   </td>
-                   <td>{(item.amount * item.price).toFixed(2)}</td>
+                   <td>R${(item.amount * item.price).toFixed(2)}</td>
                   <td>
                       <button onClick={ () => removeItem(item.id)} >-</button>
                       <button onClick={ () => removeById(item.id)} >X</button>
@@ -41,6 +44,7 @@ export default function Checkout(){
                   </tr>
               )
             })}
+           </tbody>
             </table>
              <div id="total-output">
                 <p>Produtos:  R${getTotalAmount()}</p>

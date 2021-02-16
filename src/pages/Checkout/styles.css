@@ -19,7 +19,6 @@
 .products-container-checkout td{
   text-align: center;
   border: 1px solid black;
-  width: fit-content;
 }
 
 .amount-td {
@@ -98,6 +97,7 @@ h2 {
     }
     .products-container-checkout {
         margin-left: 0;
+        width: 368px;
     }
     #empty-cart-message {
       font-size: 22px;
@@ -117,6 +117,9 @@ h2 {
     }
     .finalize-button {
       margin-top: 20px;
+    }
+    h2 {
+      text-align: justify;
     }
   }
   
