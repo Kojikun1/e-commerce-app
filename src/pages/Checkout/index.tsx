@@ -18,7 +18,7 @@ export default function Checkout(){
                 <tr>
                     <th>Produto</th>
                     <th>Valor</th>
-                    <th>Quant.</th>
+                    <th>Qtd</th>
                     <th>Total</th>
                     <th>Ações</th>
                 </tr>
@@ -49,7 +49,7 @@ export default function Checkout(){
              <div id="total-output">
                 <p>Produtos:  R${getTotalAmount()}</p>
                 <p>Frete:  R${getTotalProducts() * 10}</p>
-                <p>Total + Frete:  R${Number(getTotalAmount()) + (getTotalProducts() * 10)}</p>
+                <p>Total + Frete:  R${(Number(getTotalAmount()) + (getTotalProducts() * 10)).toFixed(2)}</p>
                 <button className="finalize-button">Finalizar Compra</button>
              </div>
             </>

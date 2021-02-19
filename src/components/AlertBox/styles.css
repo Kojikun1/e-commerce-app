@@ -48,7 +48,8 @@
     .modal-container{
         width: 240px;
         height: 40px;
-        left: calc(80% - 280px);
+        position: absolute;
+        left: calc(100% - 300px);
     }
     #modal-text {
         font-size: 14px;
