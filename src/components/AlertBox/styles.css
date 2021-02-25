@@ -16,7 +16,7 @@
 }
 
 .run-animate {
-    animation: mymodal 1.2s linear;
+    animation: mymodal 1.4s linear;
 }
 
 @keyframes mymodal {

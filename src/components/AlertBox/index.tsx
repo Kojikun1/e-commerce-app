@@ -15,7 +15,7 @@ const AlertBox: React.FC<Props> = ({ name, visible }) => {
             if(el.classList.contains('run-animate')){
                 el.classList.remove('run-animate');
             }
-          },1200);
+          },1400);
      }
     return (
         <div className="modal-container">
