@@ -22,7 +22,7 @@ export default function Checkout(){
                     <div className='product-action-value'>
                        <div>
                           <p>Valor: </p>
-                          <p>R${item.price.toFixed(2)}</p>
+                          <p className='amount-style'>R${item.price.toFixed(2)}</p>
                        </div>
                        <div>
                         <button className='product-action-button' onClick={ () => removeItem(item.id)} >-</button>
@@ -31,7 +31,7 @@ export default function Checkout(){
                        </div>
                        <div>
                            <p>Total: </p>
-                            <p>R${(item.amount * item.price).toFixed(2)}</p> 
+                            <p className='amount-style'>R${(item.amount * item.price).toFixed(2)}</p> 
                        </div>
                        <div>
                            <button className='product-action-button' onClick={ () => removeById(item.id)} >X</button>
