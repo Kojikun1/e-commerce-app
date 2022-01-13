@@ -6,6 +6,7 @@ import Header from './components/Header';
 import CartProvider from './context/CartContext';
 import Home from './pages/Home';
 import Checkout from './pages/Checkout';
+import Payment from './pages/Payment';
 
 function App(){
     return (
@@ -25,6 +26,9 @@ function App(){
           </Route>
           <Route  exact path="/checkout">
               <Checkout />
+          </Route>
+          <Route  exact path="/payment">
+              <Payment />
           </Route>
         </Switch>
         </div>
