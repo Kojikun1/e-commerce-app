@@ -24,6 +24,7 @@
     bottom: 0;
     border-radius: 5px 0 0 0 ;
     background-color: gray;
+    cursor: pointer;
   }
   #cart-icon:hover {
      background-color: lightgray;

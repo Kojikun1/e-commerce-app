@@ -25,9 +25,9 @@ const CartProvider: React.FC = ({ children }) => {
     useEffect(() => {
         localStorage.setItem('cartData',JSON.stringify(cartData));
     },[cartData]);
+
+
     function addToCart(data: Product){
-          
-        console.log('is running');
         let productExist = false;
           if(cartData.length !== 0){
               const newdata = cartData.map(item => {
